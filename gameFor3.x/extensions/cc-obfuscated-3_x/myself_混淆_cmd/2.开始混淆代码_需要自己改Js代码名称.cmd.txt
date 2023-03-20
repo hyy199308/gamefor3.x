@@ -1,0 +1,12 @@
+@REM node -v
+@REM npm -v
+@REM npm config set registry https://registry.npm.taobao.org/
+@REM npm install -g javascript-obfuscator 
+@REM npm config get registry
+@REM javascript-obfuscator -v
+@REM 需加密的文件名=index.ebe75_bef.js
+color 0a
+javascript-obfuscator index.ebe75_bef.js --config hunXiao.json --output ./web-mobile/assets/main/index.ebe75.js
+@REM 打开修改的index.ebe75.js文件
+start "" "./web-mobile/assets/main/index.ebe75.js"
+cmd

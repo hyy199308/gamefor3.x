@@ -1,0 +1,875 @@
+{
+  "name": "cc-obfuscated-3_x",
+  "package_version": 2,
+  "version": "1.0.17",
+  "description": "i18n:cc-obfuscated-3_x.description",
+  "author": "cocos creator ✍",
+  "main": "./main.js",
+  "scene-script": "./sceneJs.js",
+  "runtime-resource": {
+    "path": "runtime_Ts/",
+    "name": "cc-obfuscated-3_x"
+  },
+  "contributions": {
+    "menu": [
+      {
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "label": "i18n:cc-obfuscated-3_x.menu.argu_web_set",
+        "message": "open-web-jsob-panel",
+        "icon": "./panel/icon_build.png"
+      },
+      {
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "label": "i18n:cc-obfuscated-3_x.menu.argu_set",
+        "message": "open-setting-panel",
+        "icon": "./panel/icon_build.png"
+      },
+      {
+        "path00": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name/i18n:cc-obfuscated-3_x.name",
+        "path01": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name/i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des",
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "icon": "./panel/icon_build.png",
+        "label": "i18n:cc-obfuscated-3_x.menu.argu_des",
+        "message0": "open-setting-panel",
+        "message": "open-settings-detail-panel"
+      },
+      {
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "label": "i18n:cc-obfuscated-3_x.menu.change_uuid",
+        "message": "selectChangePath_uuid"
+      },
+      {
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "label": "i18n:cc-obfuscated-3_x.menu.open",
+        "message": "open_ob_build"
+      },
+      {
+        "path": "i18n:menu.extension/i18n:cc-obfuscated-3_x.menu.name",
+        "label": "i18n:cc-obfuscated-3_x.menu.close",
+        "message": "close_ob_build"
+      }
+    ],
+    "messages": {
+      "open-web-jsob-panel": {
+        "public": true,
+        "methods": [
+          "open_obfus_web_setting"
+        ]
+      },
+      "selectChangePath_uuid": {
+        "public": true,
+        "methods": [
+          "selectChangePath_uuid"
+        ]
+      },
+      "open-setting-panel": {
+        "public": true,
+        "description": "i18n:cc-obfuscated-3_x.menu.open_setting_panel",
+        "methods0": [
+          "open_setting_panel"
+        ],
+        "methods": [
+          "open_obfus_comp_setting"
+        ]
+      },
+      "open-settings-detail-panel": {
+        "public": true,
+        "description": "i18n:cc-obfuscated-3_x.menu.open_settings_detail_panel",
+        "methods0": [
+          "open_settings_detail_panel"
+        ],
+        "methods": [
+          "open_setting_panel"
+        ]
+      },
+      "default-obfu-changed": {
+        "methods": [
+          "on_default_obfu_value_change"
+        ]
+      },
+      "is_auto_obfusJsOpen": {
+        "methods": [
+          "is_auto_obfusJsOpen"
+        ]
+      },
+      "is_json_obfusOpen": {
+        "methods": [
+          "is_json_obfusOpen"
+        ]
+      },
+      "is_json_obfusClose": {
+        "methods": [
+          "is_json_obfusClose"
+        ]
+      },
+      "is_AST_obfusOpen": {
+        "methods": [
+          "is_AST_obfusOpen"
+        ]
+      },
+      "is_AST_obfusClose": {
+        "methods": [
+          "is_AST_obfusClose"
+        ]
+      },
+      "open_ob_build": {
+        "methods": [
+          "open_ob_build"
+        ]
+      },
+      "selectAST_jsOb": {
+        "methods": [
+          "selectAST_jsOb"
+        ]
+      },
+      "close_ob_build": {
+        "methods": [
+          "close_ob_build"
+        ]
+      }
+    },
+    "shortcuts": [
+      {
+        "message": "open-settings-detail-panel",
+        "win": "alt+b",
+        "mac": "alt+b"
+      },
+      {
+        "message": "open-setting-panel",
+        "win": "alt+s",
+        "mac": "alt+s"
+      },
+      {
+        "message": "open-web-jsob-panel",
+        "win": "alt+shift+w",
+        "mac": "alt+shift+w"
+      },
+      {
+        "message": "selectChangePath_uuid",
+        "win": "alt+shift+u",
+        "mac": "alt+shift+u"
+      },
+      {
+        "message": "open_ob_build",
+        "win": "alt+shift+o",
+        "mac": "alt+shift+o"
+      },
+      {
+        "message": "close_ob_build",
+        "win": "alt+shift+c",
+        "mac": "alt+shift+c"
+      }
+    ],
+    "inspector": {
+      "section": {
+        "node": {}
+      }
+    },
+    "scene": {
+      "script": "./sceneJs.js"
+    },
+    "asset-db": {
+      "mount": {
+        "path": "./runtime_Ts/",
+        "name": "builder-obfuscated",
+        "readonly": true
+      }
+    },
+    "profile": {
+      "editor": {
+        "test.a": {
+          "default": 0,
+          "message": "editorTestAChanged",
+          "label": "测试编辑器配置a"
+        },
+        "test.b": {
+          "default": 0,
+          "label": "测试编辑器配置-加密混淆的 MD5 值"
+        }
+      },
+      "project": {
+        "test.a": {
+          "default": 1,
+          "message": "projectTestAChanged",
+          "label": "测试项目配置a"
+        },
+        "obfu_label_0": {
+          "default": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_0.des",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_0.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_0.lab"
+        },
+        "obfu_label_1": {
+          "default": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_1.des",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_1.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.obfu_label_1.lab"
+        },
+        "bind_defaultJson": {
+          "default": "5571b22d-281e-41a6-b064-1a69b785fb0e",
+          "message": "default-obfu-changed",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.bind_defaultJson.lab"
+        },
+        "uiprogress_start": {
+          "default": "60",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.uiprogress_start.lab"
+        },
+        "uiprogress_end": {
+          "default": "100",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.uiprogress_end.lab"
+        },
+        "is_auto_obfusJS": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_auto_obfusJS.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_auto_obfusJS.lab"
+        },
+        "is_AST_obfus": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.lab"
+        },
+        "is_json_obfus": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.lab"
+        },
+        "compact": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.lab"
+        },
+        "controlFlowFlattening": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.lab"
+        },
+        "controlFlowFlatteningThreshold": {
+          "default": 0.75,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.lab"
+        },
+        "deadCodeInjection": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.lab"
+        },
+        "deadCodeInjectionThreshold": {
+          "default": 0.4,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.lab"
+        },
+        "identifierNamesGenerator": {
+          "default": 2,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.lab"
+        },
+        "identifiersPrefix": {
+          "default": "",
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.lab"
+        },
+        "renameGlobals": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.lab"
+        },
+        "seed": {
+          "default": 0,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.lab"
+        },
+        "splitStrings": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.lab"
+        },
+        "splitStringsChunkLength": {
+          "default": 10,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.lab"
+        },
+        "target": {
+          "default": 0,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.lab"
+        },
+        "transformObjectKeys": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.lab"
+        },
+        "unicodeEscapeSequence": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.lab"
+        },
+        "jsObfus_qrCodes": {
+          "label": "i18n:cc-obfuscated-3_x.proj_des.jsObfus_qrCodes.lab",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.jsObfus_qrCodes.des",
+          "default": "https://forum.cocos.org/uploads/default/original/3X/c/9/c9cfb28212173f169fda5e5ec52f02a33ce4b987.jpeg"
+        },
+        "mini_is_auto_obfusJS": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_auto_obfusJS.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_auto_obfusJS.lab"
+        },
+        "mini_is_AST_obfus": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.lab"
+        },
+        "mini_is_json_obfus": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.des",
+          "label": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.lab"
+        },
+        "mini_compact": {
+          "default": true,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.lab"
+        },
+        "mini_controlFlowFlattening": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.lab"
+        },
+        "mini_controlFlowFlatteningThreshold": {
+          "default": 0.75,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.lab"
+        },
+        "mini_deadCodeInjection": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.lab"
+        },
+        "mini_deadCodeInjectionThreshold": {
+          "default": 0.4,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.lab"
+        },
+        "mini_identifierNamesGenerator": {
+          "default": 2,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.lab"
+        },
+        "mini_identifiersPrefix": {
+          "default": "",
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.lab"
+        },
+        "mini_renameGlobals": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.lab"
+        },
+        "mini_seed": {
+          "default": 0,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.lab"
+        },
+        "mini_splitStrings": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.lab"
+        },
+        "mini_splitStringsChunkLength": {
+          "default": 10,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.lab"
+        },
+        "mini_target": {
+          "default": 0,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.lab"
+        },
+        "mini_transformObjectKeys": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.lab"
+        },
+        "mini_unicodeEscapeSequence": {
+          "default": false,
+          "message": "is_auto_obfusJsOpen",
+          "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des",
+          "label": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.lab"
+        }
+      }
+    },
+    "project": {
+      "comp-seelook-set": {
+        "label": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.lab",
+        "content": {
+          "obfu_label_0": {
+            "ui": "ui-label",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.obfu_label_0.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.obfu_label_0.tip",
+              "value": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.obfu_label_0.val"
+            }
+          },
+          "bind_defaultJson": {
+            "ui": "ui-asset",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.bind_defaultJson.des",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.bind_defaultJson.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.bind_defaultJson.tip",
+              "droppable": "cc.JsonAsset"
+            }
+          },
+          "uiprogress_start": {
+            "ui": "ui-progress",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.uiprogress_start.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.uiprogress_start.tip"
+            }
+          },
+          "mini_is_auto_obfusJS": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.is_auto_obfusJS.des"
+          },
+          "mini_is_AST_obfus": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.des"
+          },
+          "mini_is_json_obfus": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.des"
+          },
+          "mini_compact": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des"
+            }
+          },
+          "mini_controlFlowFlattening": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des"
+            }
+          },
+          "mini_controlFlowFlatteningThreshold": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+              "min": 0,
+              "max": 1,
+              "step": 0.01
+            }
+          },
+          "mini_deadCodeInjection": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des"
+            }
+          },
+          "mini_deadCodeInjectionThreshold": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+              "min": 0,
+              "max": 1,
+              "step": 0.01
+            }
+          },
+          "mini_identifierNamesGenerator": {
+            "ui": "ui-select",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des"
+            },
+            "items": [
+              {
+                "value": 0,
+                "label": "dictionary(不建议)"
+              },
+              {
+                "value": 1,
+                "label": "hexadecimal"
+              },
+              {
+                "value": 2,
+                "label": "mangled(推荐使用)"
+              },
+              {
+                "value": 3,
+                "label": "mangled-shuffled"
+              }
+            ]
+          },
+          "mini_identifiersPrefix": {
+            "ui": "ui-input",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des"
+            }
+          },
+          "mini_renameGlobals": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des"
+            }
+          },
+          "mini_seed": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+              "min": 0,
+              "max": 1024,
+              "step": 0.01
+            }
+          },
+          "mini_splitStrings": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des"
+            }
+          },
+          "mini_splitStringsChunkLength": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+              "min": 0,
+              "max": 128,
+              "step": 0.1
+            }
+          },
+          "mini_target": {
+            "ui": "ui-select",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des"
+            },
+            "items": [
+              {
+                "value": 0,
+                "label": "browser(推荐使用)"
+              },
+              {
+                "value": 1,
+                "label": "browser-no-eval(考虑)"
+              },
+              {
+                "value": 2,
+                "label": "node"
+              }
+            ]
+          },
+          "mini_transformObjectKeys": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des"
+            }
+          },
+          "mini_unicodeEscapeSequence": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des"
+            }
+          },
+          "uiprogress_end": {
+            "ui": "ui-progress",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.uiprogress_end.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.uiprogress_end.tip"
+            }
+          },
+          "jsObfus_qrCodes": {
+            "ui": "ui-qrcode",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.jsObfus_qrCodes.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_seelook_set.cont.jsObfus_qrCodes.tip"
+            }
+          }
+        }
+      },
+      "comp-obfuscated-setting": {
+        "label": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.lab",
+        "content": {
+          "obfu_label_1": {
+            "ui": "ui-label",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.obfu_label_1.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.obfu_label_1.tip",
+              "value": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.obfu_label_1.val"
+            }
+          },
+          "bind_defaultJson": {
+            "ui": "ui-asset",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.bind_defaultJson.des",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.bind_defaultJson.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.bind_defaultJson.tip",
+              "droppable": "cc.JsonAsset"
+            }
+          },
+          "uiprogress_start": {
+            "ui": "ui-progress",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.uiprogress_start.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.uiprogress_start.tip"
+            }
+          },
+          "is_auto_obfusJS": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.is_auto_obfusJS.des"
+          },
+          "is_AST_obfus": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.is_AST_obfus.des"
+          },
+          "is_json_obfus": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.proj_des.is_json_obfus.des"
+          },
+          "compact": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.compact.des"
+            }
+          },
+          "controlFlowFlattening": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlattening.des"
+            }
+          },
+          "controlFlowFlatteningThreshold": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.controlFlowFlatteningThreshold.des",
+              "min": 0,
+              "max": 1,
+              "step": 0.01
+            }
+          },
+          "deadCodeInjection": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjection.des"
+            }
+          },
+          "deadCodeInjectionThreshold": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.deadCodeInjectionThreshold.des",
+              "min": 0,
+              "max": 1,
+              "step": 0.01
+            }
+          },
+          "identifierNamesGenerator": {
+            "ui": "ui-select",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifierNamesGenerator.des"
+            },
+            "items": [
+              {
+                "value": 0,
+                "label": "dictionary(不建议)"
+              },
+              {
+                "value": 1,
+                "label": "hexadecimal"
+              },
+              {
+                "value": 2,
+                "label": "mangled(推荐使用)"
+              },
+              {
+                "value": 3,
+                "label": "mangled-shuffled"
+              }
+            ]
+          },
+          "identifiersPrefix": {
+            "ui": "ui-input",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.identifiersPrefix.des"
+            }
+          },
+          "renameGlobals": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.renameGlobals.des"
+            }
+          },
+          "seed": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.seed.des",
+              "min": 0,
+              "max": 1024,
+              "step": 0.01
+            }
+          },
+          "splitStrings": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStrings.des"
+            }
+          },
+          "splitStringsChunkLength": {
+            "ui": "ui-slider",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.splitStringsChunkLength.des",
+              "min": 0,
+              "max": 128,
+              "step": 0.1
+            }
+          },
+          "target": {
+            "ui": "ui-select",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.target.des"
+            },
+            "items": [
+              {
+                "value": 0,
+                "label": "browser(推荐使用)"
+              },
+              {
+                "value": 1,
+                "label": "browser-no-eval(考虑)"
+              },
+              {
+                "value": 2,
+                "label": "node"
+              }
+            ]
+          },
+          "transformObjectKeys": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.transformObjectKeys.des"
+            }
+          },
+          "unicodeEscapeSequence": {
+            "ui": "ui-checkbox",
+            "description": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des",
+            "attributes": {
+              "tooltip": "i18n:cc-obfuscated-3_x.obfus_option.obfus_option_config.unicodeEscapeSequence.des"
+            }
+          },
+          "uiprogress_end": {
+            "ui": "ui-progress",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.uiprogress_end.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.uiprogress_end.tip"
+            }
+          },
+          "jsObfus_qrCodes": {
+            "ui": "ui-qrcode",
+            "attributes": {
+              "title": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.jsObfus_qrCodes.tip",
+              "tooltip": "i18n:cc-obfuscated-3_x.proj_des.comp_obfuscated_setting.cont.jsObfus_qrCodes.tip"
+            }
+          }
+        }
+      }
+    },
+    "preferences": {
+      "label": "代码混淆工具",
+      "properties": {
+        "test.b": {
+          "ui": "ui-num-input"
+        }
+      }
+    },
+    "builder": "./panel_build/custom_builder.js"
+  },
+  "panels": {
+    "default": {
+      "title": "代码混淆 选定 JS 文件混淆",
+      "type": "dockable",
+      "main": "panel/index.js",
+      "size": {
+        "min-width": 500,
+        "min-height": 500,
+        "width": 520,
+        "height": 520
+      }
+    },
+    "jsObfusWeb": {
+      "title": "Cocos JavaScript-obfuscate->设定参数",
+      "type": "dockable",
+      "main": "./js_ob_web/index.js",
+      "size": {
+        "min-width": 450,
+        "min-height": 350,
+        "width": 750,
+        "height": 650
+      }
+    }
+  },
+  "dependencies": {
+    "confusion": "^0.1.1",
+    "deep-dir": "^2.0.2",
+    "dir-to-files": "^1.0.2",
+    "escodegen": "^2.0.0",
+    "esprima": "^4.0.1",
+    "express": "^4.18.2",
+    "fs": "0.0.1-security",
+    "javascript-obfuscator": "^0.28.5",
+    "js-confuser": "^1.5.1",
+    "json-obfuscator": "^2.0.2",
+    "node-uuid": "^1.4.8",
+    "replaceall": "^0.1.6"
+  },
+  "_storeId": "847a0dbba22900562fc83bc658ccdf8c"
+}

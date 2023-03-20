@@ -1,0 +1,17 @@
+{
+  "creator": {
+    "version": "3.6.2"
+  },
+  "dependencies": {
+    "crypto-es": "^1.2.7"
+  },
+  "name": "serpent",
+  "scripts": {
+    "proto": "node ../tool/build/proto.js -i ../config/proto -o ./assets/script/common/data",
+    "xlsx": "node ../tool/build/xlsx.js -i ../config/xlsx -co ./assets/script/common/data -do ./assets/resources/data",
+    "module-global": "node ./debug/module-global.js"
+  },
+  "type": "2d",
+  "uuid": "6021fef5-18da-4e3e-9bdd-f31bddb84d63",
+  "version": "3.6.2"
+}

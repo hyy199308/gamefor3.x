@@ -1,0 +1,8 @@
+{
+  "mini_is_AST_obfus": true,
+  "mini_is_auto_obfusJS": true,
+  "mini_controlFlowFlattening": true,
+  "mini_deadCodeInjection": true,
+  "mini_splitStrings": true,
+  "mini_transformObjectKeys": true
+}

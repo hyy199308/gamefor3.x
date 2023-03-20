@@ -1,0 +1,59 @@
+echo on
+echo "fs@0.0.1-security"
+echo "javascript-obfuscator@0.28.0"
+echo "调整下编辑器颜色"
+color 0a
+
+echo "查看全局的包"
+echo "npm list"
+
+echo "检查更新"
+echo "npm outdated"
+echo "Package                Current  Wanted  Latest  Location                            Depended by"
+echo "javascript-obfuscator   0.28.5  0.28.5   4.0.0  node_modules/javascript-obfuscator  cc-obfuscated-3_x"
+
+echo "执行以上命令，可以看到所有可以更新的模块。"
+echo "需要先更新 package.json文件："
+echo "安装"npm-check-updates"模块"
+echo "npm install -g npm-check-updates"
+
+echo "检查可更新的模块"
+echo "ncu"
+
+echo "npm-check-updates"
+
+echo "以上两条命令都可检查可更新模块。接下来更新package.json的依赖包到最新版本："
+echo "ncu -u"
+
+echo "以上命令执行，更新全部模块。但在实际开发中不建议一次全部更新，可以根据实际需要，更新指定的模块，并且可以根据作用范围在后面加上 -D、-S 或 -g"
+ echo "npm update xxx"
+
+echo "注意：指定更新需要提前修改 package.json 中的版本号。"
+echo "为了保险起见，package.json 更新后，可删除整个node_modules目录并重新初始化项目。"
+echo "npm install"
+
+echo "删除"
+echo "删除指定模块；"
+echo "npm uninstall xxx "
+
+echo "删除全局模块"
+echo "npm uninstall -g xxx"
+
+echo "查看混淆的依赖包最新的信息"
+echo "npm view javascript-obfuscator"
+
+echo "更新指定依赖安装包 packageName  (-D | -S)"
+echo "-S dependencies 生产环境下依赖安装(--save)，默认安装"
+echo "-D devDependencies 开发环境下依赖安装(--save-dev)"
+echo "npm update javascript-obfuscator"
+echo "npm update javascript-obfuscator@4.0.0"
+echo "安装到最新版"
+echo "npm i javascript-obfuscator"
+
+echo "fs@0.0.1-security"
+echo "javascript-obfuscator@0.28.5"
+
+echo "暂停cmd"
+pause>nul
+pause
+cmd

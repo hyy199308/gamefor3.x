@@ -1,0 +1,18 @@
+{
+  "compact": true,
+  "controlFlowFlattening": true,
+  "controlFlowFlatteningThreshold": 0.01314,
+  "deadCodeInjection": true,
+  "deadCodeInjectionThreshold": 0.0168,
+  "debugProtection": false,
+  "debugProtectionInterval": false,
+  "disableConsoleOutput": true,
+  "identifierNamesGenerator": "hexadecimal",
+  "log": false,
+  "renameGlobals": false,
+  "rotateStringArray": true,
+  "selfDefending": true,
+  "stringArray": true,
+  "stringArrayThreshold": 0.03145,
+  "unicodeEscapeSequence": false
+}

@@ -1,0 +1,32 @@
+<!--
+ * @FilePath: index.html
+ * @Author: koroFileHeader xx
+ * @Date: 2022-10-21 20:06:01
+ * @LastEditors: fileheader
+ * @LastEditTime: 2022-10-22 18:05:30
+ * @Copyright: [版权] 2022  Creator CO.LTD. All Rights Reserved.
+ * @Descripttion: 
+-->
+<div class="container" style="text-align:center;margin-top: 10px;">
+  <h2>指定 JS 文件进行混淆</h2>
+    <div>
+      <hr />  
+      <ui-hint>
+        · 请选好要混淆的 JS 文件, 然后点击页面底部的 [开始混淆] 按钮~
+      </ui-hint>
+      <ui-file extensions="js" id="getFilePath"></ui-file>
+      <hr />  
+      <ui-hint>
+        · 请选择要使用的混淆方式, 默认使用 AST , 然后点击页面底部的 [开始混淆] 按钮~
+      </ui-hint>
+      <ui-select class="flex-1" value="AST" id="getObType">
+        <option value="AST"> 使用 AST 混淆 JS 代码(比较简单, 而且不可逆, 每次结果都是不一样的</option>
+        <option value="JSob"> 使用 JavaScript-Obfuscate 混淆 Js 代码, 可逆, 且参数相同就结果一样</option>
+      </ui-select>
+      <hr />  
+    </div>
+  <div class="layout horizontal justified">
+    <!-- <ui-button style="padding-top:15px;margin-top:10px;font-size:35px;width:233px;height:55px" class="layout horizontal justified button blue big" click="startEncodeJs()">[开始混淆]</ui-button> -->
+    <ui-button style="padding-top:15px;margin-top:10px;font-size:35px;width:233px;height:55px" class=" blue big" id="startEncodeJsBtn">[开始混淆]</ui-button>
+  </div>
+</div>

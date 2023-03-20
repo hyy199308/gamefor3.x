@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 样式 --> 
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- 脚本 -->
+    <script type="text/javascript" src="../lib/vue.global.prod.js" defer></script>
+    <!-- <script type="text/javascript" src="index.js" defer></script> -->
+</head>
+<body>
+
+          	<article class='container'>
+              <h1>👇👇👇以下内容, 摘录于皮皮大佬👍👍👍</h1>
+<h2 id="_head_0">代码混淆工具-介绍+参数解释</h2>
+
+<p>[Cocos Creator 编辑器插件] 混淆代码工具，支持项目构建后自动混淆代码以及主动混淆目标文件（TODO）。</p>
+<ul>
+<li>混淆引擎：<a href="https://github.com/javascript-obfuscator/javascript-obfuscator">javascript-obfuscator@0.28.0</a></li>
+</ul>
+
+<h2 id="_head_3">参数说明</h2>
+<ul>
+<li><p>Javascript Obfuscator 文档：<a href="https://github.com/javascript-obfuscator/javascript-obfuscator/blob/master/README.md">传送门</a></p>
+</li>
+<li><p>以下均为皮皮大神人工翻译的内容，翻译得很通俗易懂。</p>
+</li>
+</ul>
+<p id="canshu_compact"><strong>compact</strong></p>
+<p>类型：<code>boolean</code> | 默认值：<code>true</code></p>
+<blockquote>
+<p>将代码压缩至一行。</p>
+</blockquote>
+<p id="canshu_controlFlowFlattening"><strong>controlFlowFlattening</strong></p>
+<p>类型：<code>boolean</code> | 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：该选项将严重影响性能，影响高达 1.5 倍。使用<code>controlFlowFlatteningThreshold</code>选项来控制转换概率。</p>
+<p>开启代码控制流扁平化。控制流扁平化会转换源代码的结构，阻碍程序的阅读理解。</p>
+<p>皮皮：就是将代码逻辑扁平化了。</p>
+</blockquote>
+<p id="canshu_controlFlowFlatteningThreshold"><strong>controlFlowFlatteningThreshold</strong></p>
+<p>类型：<code>number</code> | 默认值：<code>0.75</code> | 最小值：<code>0</code> | 最大值：<code>1</code></p>
+<blockquote>
+<p>应用控制流扁平化的概率。</p>
+<p>这个设置对于代码体积大的情况非常有用，因为大量的控制流转换会降低代码的运行速度并且增加代码的体积。</p>
+<p><code>controlFlowFlatteningThreshold: 0</code>等同于<code>controlFlowFlattening: false</code>。</p>
+</blockquote>
+<p id="canshu_deadCodeInjection"><strong>deadCodeInjection</strong></p>
+<p>类型：<code>boolean</code> | 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：该选项会急剧增加代码的体积（甚至高达 200%），如果不在乎代码体积可以使用该选项。可以使用<code>deadCodeInjectionThreshold</code>来设置添加无用代码的比例。</p>
+<p>注意：开启这个选项会强制开启 <code>stringArray</code>选项。</p>
+<p>开启这个选项时会向源代码随机添加无用的代码。</p>
+<p>皮皮：就是往代码里面随机加一些没有用的代码，迷惑敌人~</p>
+</blockquote>
+<p id="canshu_deadCodeInjectionThreshold"><strong>deadCodeInjectionThreshold</strong></p>
+<p>类型：<code>number</code> | 默认值：<code>0.4</code> | 最小值：<code>0</code> | 最大值：<code>1</code></p>
+<blockquote>
+<p>设置<code>deadCodeInjection</code>的比例。</p>
+</blockquote>
+<p id="canshu_debugProtection"><strong>debugProtection</strong></p>
+<p>类型：<code>boolean</code> | 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：打开 DevTools 可能会让浏览器卡住。</p>
+<p>开启这个选项之后 DevTools 的 console 栏基本上就不能用了（基于 WebKit 的浏览器和火狐都通杀）。</p>
+<p>皮皮：开启该选项之后开着 DevTools 就进不了游戏，但是进游戏之后再打开 DevTools 是没问题的。如果想要完全没法使用 DevTools ，需要配合 debugProtectionInterval 一起使用。</p>
+</blockquote>
+<p id="canshu_debugProtectionInterval"><strong>debugProtectionInterval</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：会让浏览器卡住！后果自负。</p>
+<p>开启之后，会让调试模式定期聚焦到 Console 栏，让 DevTools 的其他功能也没法用。这个选项需要开启了<code>debugProtection</code>才有效。</p>
+<p>皮皮：让 DevTools 一直没法用！</p>
+</blockquote>
+<p id="canshu_disableConsoleOutput"><strong>disableConsoleOutput</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>禁用<code>console.log</code>、<code>console.info</code>、<code>console.error</code>、<code>console.warn</code>、<code>console.debug</code>、<code>console.exception</code>和<code>console.trace</code>，原理是用空的函数替换掉这些函数。</p>
+</blockquote>
+<p id="canshu_domainLock"><strong>domainLock</strong></p>
+<p>类型：<code>string[]</code> | 默认值：<code>[]</code></p>
+<blockquote>
+<p>注意：当<code>target: node</code>时这个选项无效</p>
+<p>让程序只能运行在特定的域名或子域名下。这让那些只是复制粘贴代码的人（CV工程师~）更难受了。</p>
+<p>可以同时锁定多个域名。举个栗子，要让程序只能运行在 <a href="http://www.example.com">www.example.com</a> 就添加<code>www.example.com</code>。要运行在 example.com 的所有子域名下的话就用<code>.example.com</code>。</p>
+</blockquote>
+<p id="canshu_exclude"><strong>exclude</strong></p>
+<p>类型：<code>string[]</code> | 默认值：<code>[]</code></p>
+<blockquote>
+<p>需要在混淆过程中排除的文件名。</p>
+</blockquote>
+<p id="canshu_identifierNamesGenerator"><strong>identifierNamesGenerator</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;hexadecimal&#39;</code></p>
+<blockquote>
+<p>设置标识符生成器。</p>
+<p>可用值：</p>
+<ul>
+<li><code>dictionary</code>：从<code>identifiersDictionary</code>列表中获取标识符</li>
+<li><code>hexadecimal</code>：和<code>_0xabc123</code>类似的标识符</li>
+<li><code>mangled</code>：和<code>a</code>、<code>b</code>、<code>c</code>类似的短标识符</li>
+</ul>
+</blockquote>
+<p id="canshu_identifiersDictionary"><strong>identifiersDictionary</strong></p>
+<p>类型：<code>string[]</code> | 默认值：<code>[]</code></p>
+<blockquote>
+<p>设置<code>identifierNamesGenerator</code>的标识符字典。</p>
+</blockquote>
+<p id="canshu_identifiersPrefix"><strong>identifiersPrefix</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;&#39;</code></p>
+<blockquote>
+<p>设置全局标识符的前缀。</p>
+<p>当你需要混淆多个文件的时候使用这个。开启后可以避免多个文件之间的全局标识符冲突。每个文件的前缀都应该不一样。</p>
+</blockquote>
+<p id="canshu_inputFileName"><strong>inputFileName</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;&#39;</code></p>
+<blockquote>
+<p>设置源代码的输入文件名字。这个名字将用于内部生成 source map 。</p>
+</blockquote>
+<p id="canshu_log"><strong>log</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>打印日志到控制台。</p>
+</blockquote>
+<p id="canshu_renameGlobals"><strong>renameGlobals</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：可能会让你的代码爆炸。</p>
+<p>混淆全局变量和函数。</p>
+</blockquote>
+<p id="canshu_reservedNames"><strong>reservedNames</strong></p>
+<p>类型：<code>string[]</code> | 默认值：<code>[]</code></p>
+<blockquote>
+<p>保留标识符，让其不被混淆，支持正则表达式。</p>
+</blockquote>
+<p id="canshu_reservedStrings"><strong>reservedStrings</strong></p>
+<p>类型：<code>string[]</code> | 默认值：<code>[]</code></p>
+<blockquote>
+<p>保留字符串，让其不被混淆，支持正则表达式。</p>
+</blockquote>
+<p id="canshu_rotateStringArray"><strong>rotateStringArray</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>true</code></p>
+<blockquote>
+<p>注意：要开启<code>stringArray</code>才有用</p>
+<p>根据一个固定和随机（混淆时生成）的位置变换<code>stringArray</code>。这会让人难以匹配字符串到他们原来的位置。</p>
+<p>皮皮：随机变换字符串列表中元素的位置。</p>
+</blockquote>
+<p id="canshu_seed"><strong>seed</strong></p>
+<p>类型：<code>string|number</code> | 默认值：<code>0</code></p>
+<blockquote>
+<p>设置随机种子。</p>
+<p>当种子为<code>0</code>时，随机生成器就不会使用随机种子。</p>
+</blockquote>
+<p id="canshu_selfDefending"><strong>selfDefending</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：开启这个选项之后不要对混淆后的代码进行任何更改，因为任何更改（例如丑化代码）都会触发自我保护导致代码无法运行。</p>
+<p>注意：开启这个选项会强制将<code>compact</code>设为<code>true</code></p>
+<p>开启这个选项之后就不能对代码进行格式化或者重命名变量。任何人尝试美化混淆后的代码，都会让代码无法运行，使得代码难以理解和更改。</p>
+</blockquote>
+<p id="canshu_shuffleStringArray"><strong>shuffleStringArray</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>true</code></p>
+<blockquote>
+<p>注意：要开启<code>stringArray</code>才有用</p>
+<p>对<code>stringArray</code>的内容随机洗牌。</p>
+<p>皮皮：对字符串列表进行随机洗牌打乱。</p>
+</blockquote>
+<p id="canshu_sourceMap"><strong>sourceMap</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>生成混淆后的代码的 source map 。</p>
+<p>Source maps 对于调试混淆后的代码很有帮助。如果你想要或者需要对产品进行调试，可以上传单独的 source map 文件到一个安全的地方，然后引用到浏览器中。</p>
+</blockquote>
+<p id="canshu_sourceMapBaseUrl"><strong>sourceMapBaseUrl</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;&#39;</code></p>
+<blockquote>
+<p>设置当<code>sourceMapMode: &#39;separate&#39;</code>时的 source map 导入 url 的 BaseUrl。</p>
+</blockquote>
+<p id="canshu_sourceMapFileName"><strong>sourceMapFileName</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;&#39;</code></p>
+<blockquote>
+<p>设置当<code>sourceMapMode: &#39;separate&#39;</code>时的 source map 输出名称。</p>
+</blockquote>
+<p id="canshu_sourceMapMode"><strong>sourceMapMode</strong></p>
+<p>类型：<code>string</code> | 默认值：<code>&#39;separate&#39;</code></p>
+<blockquote>
+<p>指定 source map 的生成模式。</p>
+<ul>
+<li><code>inline</code> - 发送包含 source map 的单个文件而不是生成单独的文件。</li>
+<li><code>separate</code> - 生成与 source map 对应的 &#39;.map&#39; 文件。</li>
+</ul>
+</blockquote>
+<p id="canshu_splitStrings"><strong>splitStrings</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>根据<code>splitStringsChunkLength</code>将字符串分成指定长度的块。</p>
+</blockquote>
+<p id="canshu_splitStringsChunkLength"><strong>splitStringsChunkLength</strong></p>
+<p>类型：<code>number</code> | 默认值：<code>10</code></p>
+<blockquote>
+<p>设置<code>splitStrings</code>的块长度。</p>
+</blockquote>
+<p id="canshu_stringArray"><strong>stringArray</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>true</code></p>
+<blockquote>
+<p>移除并用指定的列表替换字符串。举个栗子，<code>var m = &quot;Hello World&quot;;</code>中的字符串<code>Hello World</code>将会被替换，语句会变成类似<code>var m = _0x12c456[0x1];</code>的形式。</p>
+</blockquote>
+<p id="canshu_stringArrayEncoding"><strong>stringArrayEncoding</strong></p>
+<p>类型：<code>boolean|string</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>注意：要开启<code>stringArray</code>才有用</p>
+<p>这个选项会降低脚本的速度。</p>
+<p>用<code>base64</code>或者<code>rc4</code>来加密<code>stringArray</code>中的字符串，并且插入特定的代码用来运行时解密。</p>
+<p>可用值：</p>
+<ul>
+<li><code>true</code>（<code>boolean</code>）：用<code>base64</code>加密<code>stringArray</code>字符串</li>
+<li><code>false</code>（<code>boolean</code>）：不加密<code>stringArray</code>字符串</li>
+<li><code>base64</code>（<code>string</code>）：用<code>base64</code>加密<code>stringArray</code>字符串</li>
+<li><code>rc4</code>（<code>string</code>）：用<code>rc4</code>加密<code>stringArray</code>字符串。比<code>base64</code>慢大概 30 - 50% ，但是让人更难获取初始值。</li>
+</ul>
+</blockquote>
+<p id="canshu_stringArrayThreshold"><strong>stringArrayThreshold</strong></p>
+<p>类型：<code>number</code> | 默认值：<code>0.75</code> | 最小值：<code>0</code> | 最大值：<code>1</code></p>
+<blockquote>
+<p>注意：要开启<code>stringArray</code>才有用</p>
+<p>你可以设置这个来调整字符串插入<code>stringArray</code>的概率。</p>
+<p>这个设置对于代码体积大的情况特别有用。</p>
+<p><code>stringArrayThreshold: 0</code> 等同于 <code>stringArray: false</code>。</p>
+</blockquote>
+<p id="canshu_target"><strong>target</strong></p>
+<p>类型：<code>string</code> | 默认值：&#39;browser&#39;</p>
+<blockquote>
+<p>允许你设置混淆后的代码的运行环境。</p>
+<p>可用值：</p>
+<ul>
+<li><code>browser</code>；</li>
+<li><code>browser-no-eval</code>；</li>
+<li><code>node</code>。</li>
+</ul>
+<p>目前<code>browser</code>和<code>node</code>的输出代码是完全一样的，但是某些特定的浏览器不能用<code>node</code>。<code>browser-no-eval</code>的输出代码没有使用<code>eval</code>。</p>
+</blockquote>
+<p id="canshu_transformObjectKeys"><strong>transformObjectKeys</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>开启 Object 的 key 转换。</p>
+<p>皮皮：将对象转换成多个复杂变量的组合（反正就是丑）。</p>
+</blockquote>
+<p id="canshu_unicodeEscapeSequence"><strong>unicodeEscapeSequence</strong></p>
+<p>类型：<code>boolean</code>| 默认值：<code>false</code></p>
+<blockquote>
+<p>开启或禁用字符串的 Unicode 转义序列。</p>
+<p>开启该选项会大大增加代码的体积，同时字符串也不难被恢复。只建议代码体积小的情况下使用这个选项。</p>
+<p>皮皮：将字符转为 Unicode 格式，看起来又长又臭，但是实际上很容易恢复。</p>
+</blockquote>
+<h3 id="_head_4">预设</h3>
+<p id="canshu_高度混淆，性能很低">   <strong>高度混淆，性能很低</strong></p>
+<p>性能比不混淆慢 50 - 100%</p>
+<pre><code>{
+    compact: true,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 1,
+    deadCodeInjection: true,
+    deadCodeInjectionThreshold: 1,
+    debugProtection: true,
+    debugProtectionInterval: true,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: &#39;hexadecimal&#39;,
+    log: false,
+    renameGlobals: false,
+    rotateStringArray: true,
+    selfDefending: true,
+    shuffleStringArray: true,
+    splitStrings: true,
+    splitStringsChunkLength: &#39;5&#39;,
+    stringArray: true,
+    stringArrayEncoding: &#39;rc4&#39;,
+    stringArrayThreshold: 1,
+    transformObjectKeys: true,
+    unicodeEscapeSequence: false
+}
+</code></pre><p>  <strong>中度混淆，性能均衡</strong></p>
+<p>性能比不混淆慢 30 - 50%</p>
+<pre><code>{
+    compact: true,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 0.75,
+    deadCodeInjection: true,
+    deadCodeInjectionThreshold: 0.4,
+    debugProtection: false,
+    debugProtectionInterval: false,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: &#39;hexadecimal&#39;,
+    log: false,
+    renameGlobals: false,
+    rotateStringArray: true,
+    selfDefending: true,
+    shuffleStringArray: true,
+    splitStrings: true,
+    splitStringsChunkLength: &#39;10&#39;,
+    stringArray: true,
+    stringArrayEncoding: &#39;base64&#39;,
+    stringArrayThreshold: 0.75,
+    transformObjectKeys: true,
+    unicodeEscapeSequence: false
+}
+</code></pre><p>  <strong>轻度混淆，性能较高</strong></p>
+<p>性能只会比不混淆稍微慢一点点</p>
+<pre><code>{
+    compact: true,
+    controlFlowFlattening: false,
+    deadCodeInjection: false,
+    debugProtection: false,
+    debugProtectionInterval: false,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: &#39;hexadecimal&#39;,
+    log: false,
+    renameGlobals: false,
+    rotateStringArray: true,
+    selfDefending: true,
+    shuffleStringArray: true,
+    splitStrings: false,
+    stringArray: true,
+    stringArrayEncoding: false,
+    stringArrayThreshold: 0.75,
+    unicodeEscapeSequence: false
+}
+</code></pre><h2 id="license"><em>End</em></h2> 
+          	</article>
+
+
+</body>
+</html>

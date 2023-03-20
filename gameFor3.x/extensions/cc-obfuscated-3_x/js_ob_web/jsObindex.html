@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Cocos 试验代码混淆参数 -> JavaScript Obfuscator</title>
+		<meta property="og:title" content="JavaScript Obfuscator"/>
+		<meta property="og:url" content="https://lrusso.github.io/JavaScriptObfuscator/JavaScriptObfuscator.htm"/>
+		<meta property="og:description" content="info@lrusso.com"/>
+		<meta property="og:image" content="https://lrusso.github.io/JavaScriptObfuscator/JavaScriptObfuscatorShare.png"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:site_name" content="JavaScript Obfuscator"/>
+		<meta name="theme-color" content="#f7fafc"/>
+		<meta name="mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<link rel="manifest" href="JavaScriptObfuscator.json"/>
+		<link rel="icon" sizes="16x16" type="image/png" href="JavaScriptObfuscatorFavIcon_16x16.png"/>
+		<link rel="icon" sizes="192x192" type="image/png" href="JavaScriptObfuscatorFavIcon_192x192.png"/>
+		<link rel="apple-touch-icon" href="JavaScriptObfuscatorShare.png"/>
+		<link rel="apple-touch-startup-image" href="JavaScriptObfuscatorShare.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+		<link rel="stylesheet" href="JavaScriptObfuscator.css" type="text/css">
+	</head>
+	<body>
+		<div style="
+			position: fixed;
+			width:50%;
+			right: 0;
+			top: 0;
+		">
+			<a id="buttonObfuscateSaveDown" href="" download="已混淆.js"><button id="buttonObfuscateSave"> 保存结果[Save] </button></a>
+			<button id="buttonObfuscate"> 开始混淆[Obfuscate] </button>
+			<button id="buttonClear"> 清空代码[Clear] </button>
+		</div>
+		<div style="display: flex;flex-direction: column;justify-content:center;align-items:center;">
+			<div>
+				<span>混淆参数[Obfuscate Param]</span>
+				<textarea id="inParam" spellcheck="false" rows="25" cols="80"></textarea>
+			</div>
+			<div>
+				<span>输入代码[Input JS]</span>
+				<textarea id="in" spellcheck="false" rows="25" cols="80"></textarea>
+			</div>
+			<div>
+				<span>混淆后[Obfuscated End]</span>
+				<textarea id="out" spellcheck="false" rows="25" cols="80" readonly disabled></textarea>
+			</div>
+		</div>
+		<script>
+			var def_string_show=`function jsOb_cocos() {\nconsole.log("感谢支持!");\n\n};jsOb_cocos();`;
+			var begin_min_para={
+				"compact": true,
+				"renameGlobals": true,
+			}||
+			{
+				"compact": true,
+				"controlFlowFlattening": false,
+				"controlFlowFlatteningThreshold": 0.75,
+				"deadCodeInjection": false,
+				"deadCodeInjectionThreshold": 0.4,
+				"debugProtection": false,
+				"debugProtectionInterval": false,
+				"disableConsoleOutput": false,
+				"domainLock": [],
+				"identifierNamesGenerator": "hexadecimal",
+				"identifiersDictionary": [],
+				"identifiersPrefix": "",
+				"inputFileName": "",
+				"log": false,
+				"renameGlobals": false,
+				"reservedNames": [],
+				"reservedStrings": [],
+				"rotateStringArray": true,
+				"seed": 0,
+				"selfDefending": false,
+				"shuffleStringArray": true,
+				"sourceMap": false,
+				"sourceMapBaseUrl": "",
+				"sourceMapFileName": "",
+				"sourceMapMode": "separate",
+				"splitStrings": false,
+				"splitStringsChunkLength": 10,
+				"stringArray": true,
+				"stringArrayEncoding": false,
+				"stringArrayThreshold": 0.8,
+				"target": "browser",
+				"transformObjectKeys": false,
+				"unicodeEscapeSequence": false
+				}||
+				{
+					compact: true,
+					controlFlowFlattening: true,
+					controlFlowFlatteningThreshold: 0.75,
+					deadCodeInjection: true,
+					deadCodeInjectionThreshold: 0.4,
+					debugProtection: false,
+					debugProtectionInterval: false,
+					disableConsoleOutput: true,
+					identifierNamesGenerator: 'hexadecimal',
+					log: false,
+					numbersToExpressions: true,
+					renameGlobals: false,
+					rotateStringArray: true,
+					selfDefending: true,
+					shuffleStringArray: true,
+					simplify: true,
+					splitStrings: true,
+					splitStringsChunkLength: 10,
+					stringArray: true,
+					stringArrayEncoding: ['base64'],
+					stringArrayIndexShift: true,
+					stringArrayWrappersCount: 2,
+					stringArrayWrappersChainedCalls: true,
+					stringArrayWrappersParametersMaxCount: 4,
+					stringArrayWrappersType: 'function',
+					stringArrayThreshold: 1,
+					transformObjectKeys: true,
+					unicodeEscapeSequence: false
+				};
+				
+			begin_min_para={
+					compact: true,
+					controlFlowFlattening: true,
+					controlFlowFlatteningThreshold: 0.75,
+					deadCodeInjection: true,
+					deadCodeInjectionThreshold: 0.4,
+					debugProtection: false,
+					debugProtectionInterval: false,
+					disableConsoleOutput: true,
+					identifierNamesGenerator: 'hexadecimal',
+					log: false,
+					numbersToExpressions: true,
+					renameGlobals: false,
+					rotateStringArray: true,
+					selfDefending: true,
+					shuffleStringArray: true,
+					simplify: true,
+					splitStrings: true,
+					splitStringsChunkLength: 10,
+					stringArray: true,
+					stringArrayEncoding: ['base64'],
+					stringArrayIndexShift: true,
+					stringArrayWrappersCount: 2,
+					stringArrayWrappersChainedCalls: true,
+					stringArrayWrappersParametersMaxCount: 4,
+					stringArrayWrappersType: 'function',
+					stringArrayThreshold: 1,
+					transformObjectKeys: true,
+					unicodeEscapeSequence: false
+				};
+			var start_ob_param=JSON.stringify(begin_min_para,null,2);
+			// CREATING THE WEB WORKER
+			var myWorker = new Worker("JavaScriptObfuscator.js");
+
+			// SETTING WHAT HAPPENS WHEN DATA IS RECEIVED FROM THE WEB WORKER
+			myWorker.onmessage = function(e, obParam){
+				try
+					{
+					// GETTING THE DATA SENT FROM THE WEB WORKER
+					var myReceivedData = e.data;
+
+					// SHOWING THE DATA SENT FROM THE WEB WORKER
+					document.getElementById("out").value = myReceivedData;
+
+					// ENABLING THE IN TEXTAREA
+					document.getElementById("in").disabled = false;
+
+					// SHOWING THE "OBFUSCATE" BUTTON
+					document.getElementById("buttonObfuscate").style.display = "inline-block";
+
+					// SHOWING THE "CLEAR" BUTTON
+					document.getElementById("buttonClear").style.display = "inline-block";
+
+					// FOCUSING THE OUT TEXTAREA
+					document.getElementById("out").focus();
+
+					// SELECTING THE OUT TEXTAREA TEXT
+					document.getElementById("out").select();
+					}
+					catch(err)
+					{
+					}
+
+				return true;
+			};
+
+			function obfuscateCode()
+				{
+				// DISABLING THE IN TEXTAREA
+				document.getElementById("in").disabled = true;
+
+				// ENABLING THE OUT TEXTAREA
+				document.getElementById("out").disabled = false;
+
+				// FOCUSING THE OUT TEXTAREA
+				document.getElementById("out").focus();
+
+				// UPDATING THE OUT TEXTAREA
+				document.getElementById("out").value = "Please wait...";
+
+				// HIDING THE "OBFUSCATE" BUTTON
+				document.getElementById("buttonObfuscate").style.display = "none";
+
+				// HIDING THE "CLEAR" BUTTON
+				document.getElementById("buttonClear").style.display = "none";
+
+				// SENDING THE CODE TO THE WEB WORKER
+				myWorker.postMessage([document.getElementById("in").value,document.getElementById("inParam").value,"混淆参数"]);
+				}
+
+			window.addEventListener("load", function()
+				{
+					
+				// 自定义参数
+				document.getElementById("inParam").value = start_ob_param;
+
+				// CLEARING THE IN TEXTAREA
+				document.getElementById("in").value = def_string_show;
+
+				// CLEARING THE OUT TEXTAREA
+				document.getElementById("out").value = "";
+
+				// DISABLING THE OUT TEXTAREA
+				document.getElementById("out").disabled = true;
+
+				// FOCUSING THE IN TEXTAREA
+				document.getElementById("in").focus();
+
+				// SETTING WHAT WILL HAPPEN WHEN THE USER CLICKS IN THE "OBFUSCATE" BUTTON
+				document.getElementById("buttonObfuscate").addEventListener("click",function(event)
+					{
+					// STARTING THE OBFUSCATING CODE PROCESS
+					obfuscateCode();
+					});
+
+				document.getElementById("buttonObfuscateSave").addEventListener("click",function(event)
+				{ 
+					// var txtVal = document.getElementById("out").value;
+					// var ww = window.open("", "_blank", "width=100px,height=100px");
+					// ww.document.write(txtVal);
+					// ww.document.close();
+					// ww.document.execCommand('SaveAs');
+					// ww.document.execCommand('Saveas',false,'./test.htm');   
+					// ww.close();    
+					document.getElementById("buttonObfuscateSaveDown").setAttribute( "href", "data:text/paint;utf-8," + document.getElementById("out").value);
+				});
+				// document.getElementById("out").addEventListener("change", function(){
+				// 	// var bs64str="";
+				// 	// fileInputGet.onchange = function () {
+				// 	// 	var file = this.files[0];
+				// 	// 	var reader = new FileReader();
+				// 	// 	reader.readAsDataURL(file);
+				// 	// 	reader.onload = function () {
+				// 	// 		console.log(reader.result);
+				// 	// 		textareaIDGet.innerHTML=reader.result;
+				// 	// 	};
+				// 	// 	};
+				// 	document.getElementById("buttonObfuscateSaveDown").setAttribute( "href", "data:text/paint;utf-8," + document.getElementById("out").value);
+				// }()); 
+
+				// SETTING WHAT WILL HAPPEN WHEN THE USER CLICKS IN THE "CLEAR" BUTTON
+				document.getElementById("buttonClear").addEventListener("click",function(event)
+					{
+					
+					// 自定义参数
+					document.getElementById("inParam").value = start_ob_param;
+
+					// CLEARING THE IN TEXTAREA
+					document.getElementById("in").value = def_string_show;
+
+					// CLEARING THE OUT TEXTAREA
+					document.getElementById("out").value = "";
+					});
+
+				// SETTING WHAT WILL HAPPEN WHEN THE USER PASTE A TEXT IN THE IN TEXTAREA
+				document.getElementById("in").addEventListener("paste", function(e)
+					{
+					// CANCELING THE PASTE EVENT
+					e.preventDefault();
+
+					// GETTING THE CLIPBOARD CONTENT AS PLAIN TEXT
+					var text = (e.originalEvent || e).clipboardData.getData("text/plain");
+
+					// UPDATING THE IN TEXTAREA
+					document.getElementById("in").value = text;
+
+					// STARTING THE OBFUSCATING CODE PROCESS
+					obfuscateCode();
+					});
+				});
+
+			if ("serviceWorker" in navigator)
+				{
+				navigator.serviceWorker.register("worker.js").then(function(registration)
+					{
+					// Registration successful
+					//console.log("ServiceWorker registration successful with scope: " + registration.scope);
+					}).catch(function(err)
+					{
+					// Registration failed
+					//console.log("ServiceWorker registration failed: " + err);
+					});
+				}
+		</script>
+	</body>
+</html>
